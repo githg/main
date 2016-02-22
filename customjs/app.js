@@ -4,7 +4,7 @@ myApp.config(['$routeProvider', function($routeProvider){
     $routeProvider.
     
     when('/login',{
-        templateUrl: 'views/login.html',
+        templateUrl: 'partials/login.html',
         controller: 'RegistrationController'
     }).
     when('/register',{

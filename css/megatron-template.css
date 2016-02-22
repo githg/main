@@ -3856,11 +3856,12 @@ _:valid\0, .contacts-form input.form-control, .contacts-form textarea.form-contr
 	padding-bottom: 20px;
 }
 .footer-navbar.dark {
-	background: url(../images/logo-back.png) no-repeat 50% 50% #272727;
-	color: #d9d9d9
+	background: no-repeat 50% 50% #272727;
+	color: #d9d9d9;
+/*    url(../images/logo-back.png) */
 }
 .footer-navbar.dark h3 {
-	color: #fff
+	color: #fff;
 }
 .footer-navbar.dark a {
 	color: #d9d9d9
