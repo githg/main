@@ -14,35 +14,50 @@
             <div class="large-icon"><img src="images/large-icon-lock.png" alt=""></div>
             <div class="wrap">
               <h3>CREATE AN ACCOUNT</h3>
-              <form action="#" id="form-returning">
+              <form name="loginForm">
                   <h5>Personal Information</h5>
                 <div class="form-group">
-                  <label for="email">First Name</label>
-                  <input type="email" class="form-control" id="email">
+                 
+                    <label ng-hide="loginForm.firstName.$invalid && loginForm.firstName.$touched">First Name*</label>
+                    <label class="error validationerror" ng-show="loginForm.firstName.$invalid && loginForm.firstName.$touched" >First Name* Only Characters Allowed</label>
+                    <input class="form-control" name="firstName" ng-required="true" ng-model="user.firstName" ng-pattern="chars">
+                    
                 </div>
-                   <div class="form-group">
-                  <label for="email">Middle Name</label>
-                  <input type="email" class="form-control" id="email">
+                <div class="form-group">
+                    
+                    <label ng-hide="loginForm.middleName.$invalid && loginForm.middleName.$touched">Middle Name</label>
+                    <label class="error validationerror" ng-show="loginForm.middleName.$invalid && loginForm.middleName.$touched" >Enter Middle Name! No special characters & numbers allowed.</label>
+                    <input class="form-control" name="middleName" ng-model="user.middleName"  ng-pattern="chars">
+                    
                 </div>
-                   <div class="form-group">
-                  <label for="email">Last Name</label>
-                  <input type="email" class="form-control" id="email">
+                  
+                    <label ng-hide="loginForm.lastName.$invalid && loginForm.lastName.$touched">Last Name*</label>
+                    <label class="error validationerror" ng-show="loginForm.lastName.$invalid && loginForm.lastName.$touched" >Last Name* Only Characters Allowed</label>
+                    <input class="form-control" name="lastName" ng-model="user.lastName"  ng-pattern="chars" ng-required="true">
+                  
                 </div>
                   <div class="form-group">
-                  <label for="email">Email Address</label>
-                  <input type="email" class="form-control" id="email">
+                  
+                    <label ng-hide="loginForm.email.$invalid && loginForm.email.$touched" for="email">Email Address</label>
+                    <label class="error validationerror" ng-show="loginForm.email.$invalid && loginForm.email.$touched" for="email">Must be a valid email</label>
+                    <input type="email" class="form-control" name="email" ng-model="user.email" ng-required="true">
+                
                 </div>
-                  <input type="checkbox"></input>&nbsp;
-                 <label for="password">Sign Up for Newsletter
-</label>
+                    <input type="checkbox"></input>&nbsp;
+                    <label>Sign Up for Newsletter</label>
+              
                   <h5>Login Information</h5>
                 <div class="form-group">
-                  <label for="password">Password</label>
-                  <input type="password" class="form-control" id="password">
+                    
+                    <label ng-hide="loginForm.pwd1.$invalid && loginForm.pwd1.$touched">Password*</label>
+                    <label class="error validationerror" ng-show="loginForm.pwd1.$invalid && loginForm.password.$touched" >One Number One character Compulsory</label>
+                    <input class="form-control" name="pwd1" ng-required="true" ng-model="user.pwd1" ng-pattern="passWord" type="password">
+                    
                 </div>
-                  <div class="form-group">
-                  <label for="password">Confirm Password</label>
-                  <input type="password" class="form-control" id="password">
+                <div class="form-group">
+                    <label ng-hide="loginForm.pwd2.$invalid && loginForm.pwd2.$touched">Confirm Password*</label>
+                    <label class="error validationerror" ng-show="loginForm.pwd2.$invalid && loginForm.password.$touched" >First Name* Only Characters Allowed</label>
+                    <input class="form-control" name="pwd2" ng-required="true" ng-model="user.pwd2" ng-pattern="passWord" type="password">  
                 </div>
                 <div class="form-link"> <a href="#">Forgot Your Password?</a> </div>
                 <button type="submit" class="btn btn-mega" onclick="document.getElementById('form-returning').submit();">Register</button>
